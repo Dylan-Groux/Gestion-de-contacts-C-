@@ -9,19 +9,19 @@ namespace MediaTekDocuments
         //Variables 
         private string name;
         private string description;
-        private List<SuiviCommande> commandesList;
+        private List<Contacts> contactsList;
 
         //Properties
         public string Name { get => name; set => name = value; }
         public string Description { get => name; set => name = value; }
-        public List<SuiviCommande> suiviCommandes { get => commandesList; set => commandesList = value; }
+        public List<Contacts> Contacts { get => contactsList; set => contactsList = value; }
 
         //Constructor
         public Groupes() 
         {
             this.Name = "Undefined";
             this.Description = "Undefined";
-            this.commandesList = new List<SuiviCommande>();
+            this.contactsList = new List<Contacts>();
 
         }
 
@@ -29,15 +29,15 @@ namespace MediaTekDocuments
         {
             this.Name = groupName;
             this.Description = groupDescription;
-            this.commandesList = new List<SuiviCommande>();
+            this.contactsList = new List<Contacts>();
 
         }
 
-        public Groupes(string groupName, string groupDescription, List<SuiviCommande> commandesList)
+        public Groupes(string groupName, string groupDescription, List<Contacts> contactsList)
         {
             this.Name = groupName;
             this.Description = groupDescription;
-            this.commandesList =commandesList;
+            this.contactsList =contactsList;
 
         }
 

@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="scripts\Global.cs" />
     <Compile Include="View\AddNewContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,7 +62,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="scripts\Groupes.cs" />
-    <Compile Include="scripts\SuiviCommande.cs" />
+    <Compile Include="scripts\Contacts.cs" />
     <EmbeddedResource Include="View\AddNewContactForm.resx">
       <DependentUpon>AddNewContactForm.cs</DependentUpon>
     </EmbeddedResource>

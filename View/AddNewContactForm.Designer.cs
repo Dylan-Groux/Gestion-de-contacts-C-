@@ -40,11 +40,12 @@
             this.LABEL_REP_ADDRESS_NEWCONTACT = new System.Windows.Forms.TextBox();
             this.LABEL_REP_TEL_NEWCONTACT = new System.Windows.Forms.TextBox();
             this.LABEL_GROUPES_NEWCONTACT = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CB_GROUPES_ADD_NEWCONTACT = new System.Windows.Forms.ComboBox();
             this.NEW_CONTACT_PANEL = new System.Windows.Forms.Panel();
-            this.GB_INFO_NEW_CONTACT = new System.Windows.Forms.GroupBox();
-            this.BT_ADD_NEWCONTACT = new System.Windows.Forms.Button();
             this.BT_ADD_NEW_PICTURE_NEWCONTACT = new System.Windows.Forms.Button();
+            this.BT_ADD_NEWCONTACT = new System.Windows.Forms.Button();
+            this.GB_INFO_NEW_CONTACT = new System.Windows.Forms.GroupBox();
+            this.OFD_IMG_NEWCONTACT = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.PICB_IMG_NEWCONTACT)).BeginInit();
             this.NEW_CONTACT_PANEL.SuspendLayout();
             this.GB_INFO_NEW_CONTACT.SuspendLayout();
@@ -55,6 +56,7 @@
             this.PICB_IMG_NEWCONTACT.Location = new System.Drawing.Point(7, 8);
             this.PICB_IMG_NEWCONTACT.Name = "PICB_IMG_NEWCONTACT";
             this.PICB_IMG_NEWCONTACT.Size = new System.Drawing.Size(315, 190);
+            this.PICB_IMG_NEWCONTACT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PICB_IMG_NEWCONTACT.TabIndex = 0;
             this.PICB_IMG_NEWCONTACT.TabStop = false;
             // 
@@ -160,26 +162,48 @@
             this.LABEL_GROUPES_NEWCONTACT.UseMnemonic = false;
             this.LABEL_GROUPES_NEWCONTACT.Click += new System.EventHandler(this.label1_Click);
             // 
-            // comboBox1
+            // CB_GROUPES_ADD_NEWCONTACT
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(155, 431);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 21);
-            this.comboBox1.TabIndex = 18;
+            this.CB_GROUPES_ADD_NEWCONTACT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_GROUPES_ADD_NEWCONTACT.FormattingEnabled = true;
+            this.CB_GROUPES_ADD_NEWCONTACT.Location = new System.Drawing.Point(155, 431);
+            this.CB_GROUPES_ADD_NEWCONTACT.Name = "CB_GROUPES_ADD_NEWCONTACT";
+            this.CB_GROUPES_ADD_NEWCONTACT.Size = new System.Drawing.Size(155, 21);
+            this.CB_GROUPES_ADD_NEWCONTACT.TabIndex = 18;
             // 
             // NEW_CONTACT_PANEL
             // 
             this.NEW_CONTACT_PANEL.Controls.Add(this.BT_ADD_NEW_PICTURE_NEWCONTACT);
             this.NEW_CONTACT_PANEL.Controls.Add(this.BT_ADD_NEWCONTACT);
             this.NEW_CONTACT_PANEL.Controls.Add(this.GB_INFO_NEW_CONTACT);
-            this.NEW_CONTACT_PANEL.Controls.Add(this.comboBox1);
+            this.NEW_CONTACT_PANEL.Controls.Add(this.CB_GROUPES_ADD_NEWCONTACT);
             this.NEW_CONTACT_PANEL.Controls.Add(this.LABEL_GROUPES_NEWCONTACT);
             this.NEW_CONTACT_PANEL.Controls.Add(this.PICB_IMG_NEWCONTACT);
             this.NEW_CONTACT_PANEL.Location = new System.Drawing.Point(5, 4);
             this.NEW_CONTACT_PANEL.Name = "NEW_CONTACT_PANEL";
             this.NEW_CONTACT_PANEL.Size = new System.Drawing.Size(332, 516);
             this.NEW_CONTACT_PANEL.TabIndex = 19;
+            // 
+            // BT_ADD_NEW_PICTURE_NEWCONTACT
+            // 
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Location = new System.Drawing.Point(7, 173);
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Name = "BT_ADD_NEW_PICTURE_NEWCONTACT";
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Size = new System.Drawing.Size(315, 23);
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.TabIndex = 21;
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Text = "Ajouter une image";
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.UseVisualStyleBackColor = true;
+            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Click += new System.EventHandler(this.BT_ADD_NEW_PICTURE_NEWCONTACT_Click);
+            // 
+            // BT_ADD_NEWCONTACT
+            // 
+            this.BT_ADD_NEWCONTACT.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BT_ADD_NEWCONTACT.Location = new System.Drawing.Point(0, 493);
+            this.BT_ADD_NEWCONTACT.Name = "BT_ADD_NEWCONTACT";
+            this.BT_ADD_NEWCONTACT.Size = new System.Drawing.Size(332, 23);
+            this.BT_ADD_NEWCONTACT.TabIndex = 20;
+            this.BT_ADD_NEWCONTACT.Text = "Ajouter un nouveau contact";
+            this.BT_ADD_NEWCONTACT.UseVisualStyleBackColor = true;
+            this.BT_ADD_NEWCONTACT.Click += new System.EventHandler(this.BT_ADD_NEWCONTACT_Click);
             // 
             // GB_INFO_NEW_CONTACT
             // 
@@ -200,25 +224,11 @@
             this.GB_INFO_NEW_CONTACT.TabStop = false;
             this.GB_INFO_NEW_CONTACT.Text = "Informations du contact :";
             // 
-            // BT_ADD_NEWCONTACT
+            // OFD_IMG_NEWCONTACT
             // 
-            this.BT_ADD_NEWCONTACT.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.BT_ADD_NEWCONTACT.Location = new System.Drawing.Point(0, 493);
-            this.BT_ADD_NEWCONTACT.Name = "BT_ADD_NEWCONTACT";
-            this.BT_ADD_NEWCONTACT.Size = new System.Drawing.Size(332, 23);
-            this.BT_ADD_NEWCONTACT.TabIndex = 20;
-            this.BT_ADD_NEWCONTACT.Text = "Ajouter un nouveau contact";
-            this.BT_ADD_NEWCONTACT.UseVisualStyleBackColor = true;
-            this.BT_ADD_NEWCONTACT.Click += new System.EventHandler(this.BT_ADD_NEWCONTACT_Click);
-            // 
-            // BT_ADD_NEW_PICTURE_NEWCONTACT
-            // 
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Location = new System.Drawing.Point(7, 173);
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Name = "BT_ADD_NEW_PICTURE_NEWCONTACT";
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Size = new System.Drawing.Size(315, 23);
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.TabIndex = 21;
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.Text = "Ajouter une image";
-            this.BT_ADD_NEW_PICTURE_NEWCONTACT.UseVisualStyleBackColor = true;
+            this.OFD_IMG_NEWCONTACT.FileName = "openFileDialog1";
+            this.OFD_IMG_NEWCONTACT.Filter = "(FichierPNG)|*.png|(FichierJPEG)|*.jpg";
+            this.OFD_IMG_NEWCONTACT.Title = "Sélectionnez une image ";
             // 
             // AddNewContactForm
             // 
@@ -250,10 +260,11 @@
         private System.Windows.Forms.TextBox LABEL_REP_ADDRESS_NEWCONTACT;
         private System.Windows.Forms.TextBox LABEL_REP_TEL_NEWCONTACT;
         private System.Windows.Forms.Label LABEL_GROUPES_NEWCONTACT;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CB_GROUPES_ADD_NEWCONTACT;
         private System.Windows.Forms.Panel NEW_CONTACT_PANEL;
         private System.Windows.Forms.GroupBox GB_INFO_NEW_CONTACT;
         private System.Windows.Forms.Button BT_ADD_NEWCONTACT;
         private System.Windows.Forms.Button BT_ADD_NEW_PICTURE_NEWCONTACT;
+        private System.Windows.Forms.OpenFileDialog OFD_IMG_NEWCONTACT;
     }
 }

@@ -37,6 +37,7 @@
             this.LB_CONTACTS = new System.Windows.Forms.ListBox();
             this.CB_CONTACTS = new System.Windows.Forms.ComboBox();
             this.RIGHT_PANEL = new System.Windows.Forms.Panel();
+            this.DELETE_CONTACT = new System.Windows.Forms.Button();
             this.LABEL_REP_TEL_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_REP_ADDRESS_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_REP_EMAIL_CONTACT = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.LABEL_NAME_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_IMG_GP_CONTACT = new System.Windows.Forms.Label();
             this.PICB_IMG_CONTACT = new System.Windows.Forms.PictureBox();
-            this.DELETE_CONTACT = new System.Windows.Forms.Button();
             this.LEFT_PANEL.SuspendLayout();
             this.GB_SEARCH_CONTACT.SuspendLayout();
             this.GB_CONTACT.SuspendLayout();
@@ -92,6 +92,7 @@
             this.BT_ADD_NEW_CONTACT.TabIndex = 2;
             this.BT_ADD_NEW_CONTACT.Text = "Ajouter un nouveau contact";
             this.BT_ADD_NEW_CONTACT.UseVisualStyleBackColor = true;
+            this.BT_ADD_NEW_CONTACT.Click += new System.EventHandler(this.BT_ADD_NEW_CONTACT_Click);
             // 
             // GB_CONTACT
             // 
@@ -111,6 +112,7 @@
             this.LB_CONTACTS.Name = "LB_CONTACTS";
             this.LB_CONTACTS.Size = new System.Drawing.Size(257, 290);
             this.LB_CONTACTS.TabIndex = 1;
+            this.LB_CONTACTS.SelectedIndexChanged += new System.EventHandler(this.LB_CONTACTS_SelectedIndexChanged);
             // 
             // CB_CONTACTS
             // 
@@ -120,6 +122,7 @@
             this.CB_CONTACTS.Name = "CB_CONTACTS";
             this.CB_CONTACTS.Size = new System.Drawing.Size(258, 21);
             this.CB_CONTACTS.TabIndex = 0;
+            this.CB_CONTACTS.SelectedIndexChanged += new System.EventHandler(this.CB_CONTACTS_SelectedIndexChanged);
             // 
             // RIGHT_PANEL
             // 
@@ -140,6 +143,20 @@
             this.RIGHT_PANEL.Name = "RIGHT_PANEL";
             this.RIGHT_PANEL.Size = new System.Drawing.Size(453, 485);
             this.RIGHT_PANEL.TabIndex = 2;
+            // 
+            // DELETE_CONTACT
+            // 
+            this.DELETE_CONTACT.BackColor = System.Drawing.Color.Transparent;
+            this.DELETE_CONTACT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DELETE_CONTACT.BackgroundImage")));
+            this.DELETE_CONTACT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.DELETE_CONTACT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DELETE_CONTACT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DELETE_CONTACT.ForeColor = System.Drawing.SystemColors.Control;
+            this.DELETE_CONTACT.Location = new System.Drawing.Point(425, 0);
+            this.DELETE_CONTACT.Name = "DELETE_CONTACT";
+            this.DELETE_CONTACT.Size = new System.Drawing.Size(28, 28);
+            this.DELETE_CONTACT.TabIndex = 12;
+            this.DELETE_CONTACT.UseVisualStyleBackColor = false;
             // 
             // LABEL_REP_TEL_CONTACT
             // 
@@ -277,20 +294,6 @@
             this.PICB_IMG_CONTACT.TabIndex = 0;
             this.PICB_IMG_CONTACT.TabStop = false;
             // 
-            // DELETE_CONTACT
-            // 
-            this.DELETE_CONTACT.BackColor = System.Drawing.Color.Transparent;
-            this.DELETE_CONTACT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DELETE_CONTACT.BackgroundImage")));
-            this.DELETE_CONTACT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DELETE_CONTACT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DELETE_CONTACT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DELETE_CONTACT.ForeColor = System.Drawing.SystemColors.Control;
-            this.DELETE_CONTACT.Location = new System.Drawing.Point(425, 0);
-            this.DELETE_CONTACT.Name = "DELETE_CONTACT";
-            this.DELETE_CONTACT.Size = new System.Drawing.Size(28, 28);
-            this.DELETE_CONTACT.TabIndex = 12;
-            this.DELETE_CONTACT.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -329,6 +332,7 @@
         //Gestion du panel droit de la MainWindows
         private System.Windows.Forms.Panel RIGHT_PANEL;
         #region labelAndImgPanelRight
+        private System.Windows.Forms.Button DELETE_CONTACT;
         private System.Windows.Forms.PictureBox PICB_IMG_CONTACT;
         private System.Windows.Forms.Label LABEL_IMG_GP_CONTACT;
         private System.Windows.Forms.Label LABEL_NAME_CONTACT;
@@ -345,7 +349,6 @@
         private System.Windows.Forms.Label LABEL_REP_NAME_CONTACT;
         #endregion
 
-        private System.Windows.Forms.Button DELETE_CONTACT;
     }
 }
 
