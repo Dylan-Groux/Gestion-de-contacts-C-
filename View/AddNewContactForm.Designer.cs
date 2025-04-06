@@ -1,4 +1,4 @@
-﻿namespace Gestion_de_contactss_C_
+﻿namespace MyContact
 {
     partial class AddNewContactForm
     {

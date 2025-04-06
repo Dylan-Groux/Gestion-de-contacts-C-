@@ -8,9 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MediaTekDocuments;
 
-namespace Gestion_de_contactss_C_
+namespace MyContact
 {
     public partial class AddNewContactForm : Form
     {

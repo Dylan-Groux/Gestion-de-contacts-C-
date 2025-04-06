@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Gestion_de_contactss_C_
+namespace MyContact
 {
     internal static class Program
     {

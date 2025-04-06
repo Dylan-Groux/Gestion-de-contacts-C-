@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 
 
-namespace MediaTekDocuments
+namespace MyContact
 {
+    [Serializable]
     public class Groupes
     {
         //Variables 

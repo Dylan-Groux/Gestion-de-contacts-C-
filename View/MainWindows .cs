@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MediaTekDocuments;
 
-namespace Gestion_de_contactss_C_
+namespace MyContact
 {
     public partial class Form1 : Form
     {
@@ -144,6 +143,7 @@ namespace Gestion_de_contactss_C_
             this.PICB_IMG_CONTACT.Image = contact.Photo;
         }
 
+        // ClearInfos() method to clear the contact information labels and image
         private void ClearInfos()
         {
             this.LABEL_IMG_GP_CONTACT.Text = "";

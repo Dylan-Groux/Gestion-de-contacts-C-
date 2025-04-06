@@ -2,8 +2,10 @@
 using System.Drawing;
 using System.Drawing.Text;
 
-namespace MediaTekDocuments
+namespace MyContact
 {
+    [Serializable]
+
     public class Contacts
     {
         //Variable
