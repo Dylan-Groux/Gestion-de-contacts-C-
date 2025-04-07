@@ -6,6 +6,7 @@
         /// Variable nécessaire au concepteur.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        private System.Windows.Forms.Button BT_DELETE_CONTACT;
 
         /// <summary>
         /// Nettoyage des ressources utilisées.
@@ -28,7 +29,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.LEFT_PANEL = new System.Windows.Forms.Panel();
             this.GB_SEARCH_CONTACT = new System.Windows.Forms.GroupBox();
             this.TB_SEARCH_CONTACT = new System.Windows.Forms.TextBox();
@@ -37,7 +37,7 @@
             this.LB_CONTACTS = new System.Windows.Forms.ListBox();
             this.CB_CONTACTS = new System.Windows.Forms.ComboBox();
             this.RIGHT_PANEL = new System.Windows.Forms.Panel();
-            this.DELETE_CONTACT = new System.Windows.Forms.Button();
+            this.BT_DELETE_CONTACT = new System.Windows.Forms.Button();
             this.LABEL_REP_TEL_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_REP_ADDRESS_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_REP_EMAIL_CONTACT = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@
             // 
             // RIGHT_PANEL
             // 
-            this.RIGHT_PANEL.Controls.Add(this.DELETE_CONTACT);
+            this.RIGHT_PANEL.Controls.Add(this.BT_DELETE_CONTACT);
             this.RIGHT_PANEL.Controls.Add(this.LABEL_REP_TEL_CONTACT);
             this.RIGHT_PANEL.Controls.Add(this.LABEL_REP_ADDRESS_CONTACT);
             this.RIGHT_PANEL.Controls.Add(this.LABEL_REP_EMAIL_CONTACT);
@@ -144,24 +144,24 @@
             this.RIGHT_PANEL.Size = new System.Drawing.Size(453, 485);
             this.RIGHT_PANEL.TabIndex = 2;
             // 
-            // DELETE_CONTACT
+            // BT_DELETE_CONTACT
             // 
-            this.DELETE_CONTACT.BackColor = System.Drawing.Color.Transparent;
-            this.DELETE_CONTACT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DELETE_CONTACT.BackgroundImage")));
-            this.DELETE_CONTACT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.DELETE_CONTACT.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DELETE_CONTACT.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DELETE_CONTACT.ForeColor = System.Drawing.SystemColors.Control;
-            this.DELETE_CONTACT.Location = new System.Drawing.Point(425, 0);
-            this.DELETE_CONTACT.Name = "DELETE_CONTACT";
-            this.DELETE_CONTACT.Size = new System.Drawing.Size(28, 28);
-            this.DELETE_CONTACT.TabIndex = 12;
-            this.DELETE_CONTACT.UseVisualStyleBackColor = false;
+            this.BT_DELETE_CONTACT.BackColor = System.Drawing.Color.Transparent;
+            this.BT_DELETE_CONTACT.BackgroundImage = global::MyContact.Properties.Resources.delete_156119_1280;
+            this.BT_DELETE_CONTACT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BT_DELETE_CONTACT.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BT_DELETE_CONTACT.Location = new System.Drawing.Point(419, 0);
+            this.BT_DELETE_CONTACT.Name = "BT_DELETE_CONTACT";
+            this.BT_DELETE_CONTACT.Size = new System.Drawing.Size(31, 26);
+            this.BT_DELETE_CONTACT.TabIndex = 12;
+            this.BT_DELETE_CONTACT.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.BT_DELETE_CONTACT.UseVisualStyleBackColor = false;
+            this.BT_DELETE_CONTACT.Click += new System.EventHandler(this.BT_DELETE_CONTACT_Click);
             // 
             // LABEL_REP_TEL_CONTACT
             // 
             this.LABEL_REP_TEL_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_REP_TEL_CONTACT.Location = new System.Drawing.Point(199, 382);
+            this.LABEL_REP_TEL_CONTACT.Location = new System.Drawing.Point(199, 428);
             this.LABEL_REP_TEL_CONTACT.Name = "LABEL_REP_TEL_CONTACT";
             this.LABEL_REP_TEL_CONTACT.Size = new System.Drawing.Size(217, 38);
             this.LABEL_REP_TEL_CONTACT.TabIndex = 11;
@@ -172,7 +172,7 @@
             // LABEL_REP_ADDRESS_CONTACT
             // 
             this.LABEL_REP_ADDRESS_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_REP_ADDRESS_CONTACT.Location = new System.Drawing.Point(199, 344);
+            this.LABEL_REP_ADDRESS_CONTACT.Location = new System.Drawing.Point(199, 390);
             this.LABEL_REP_ADDRESS_CONTACT.Name = "LABEL_REP_ADDRESS_CONTACT";
             this.LABEL_REP_ADDRESS_CONTACT.Size = new System.Drawing.Size(217, 38);
             this.LABEL_REP_ADDRESS_CONTACT.TabIndex = 10;
@@ -183,7 +183,7 @@
             // LABEL_REP_EMAIL_CONTACT
             // 
             this.LABEL_REP_EMAIL_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_REP_EMAIL_CONTACT.Location = new System.Drawing.Point(199, 306);
+            this.LABEL_REP_EMAIL_CONTACT.Location = new System.Drawing.Point(199, 352);
             this.LABEL_REP_EMAIL_CONTACT.Name = "LABEL_REP_EMAIL_CONTACT";
             this.LABEL_REP_EMAIL_CONTACT.Size = new System.Drawing.Size(217, 38);
             this.LABEL_REP_EMAIL_CONTACT.TabIndex = 9;
@@ -194,7 +194,7 @@
             // LABEL_REP_FIRST_NAME_CONTACT
             // 
             this.LABEL_REP_FIRST_NAME_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_REP_FIRST_NAME_CONTACT.Location = new System.Drawing.Point(199, 268);
+            this.LABEL_REP_FIRST_NAME_CONTACT.Location = new System.Drawing.Point(199, 314);
             this.LABEL_REP_FIRST_NAME_CONTACT.Name = "LABEL_REP_FIRST_NAME_CONTACT";
             this.LABEL_REP_FIRST_NAME_CONTACT.Size = new System.Drawing.Size(217, 38);
             this.LABEL_REP_FIRST_NAME_CONTACT.TabIndex = 8;
@@ -205,7 +205,7 @@
             // LABEL_REP_NAME_CONTACT
             // 
             this.LABEL_REP_NAME_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_REP_NAME_CONTACT.Location = new System.Drawing.Point(199, 230);
+            this.LABEL_REP_NAME_CONTACT.Location = new System.Drawing.Point(199, 276);
             this.LABEL_REP_NAME_CONTACT.Name = "LABEL_REP_NAME_CONTACT";
             this.LABEL_REP_NAME_CONTACT.Size = new System.Drawing.Size(217, 38);
             this.LABEL_REP_NAME_CONTACT.TabIndex = 7;
@@ -216,7 +216,7 @@
             // LABEL_TEL_CONTACT
             // 
             this.LABEL_TEL_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_TEL_CONTACT.Location = new System.Drawing.Point(30, 382);
+            this.LABEL_TEL_CONTACT.Location = new System.Drawing.Point(30, 428);
             this.LABEL_TEL_CONTACT.Name = "LABEL_TEL_CONTACT";
             this.LABEL_TEL_CONTACT.Size = new System.Drawing.Size(197, 38);
             this.LABEL_TEL_CONTACT.TabIndex = 6;
@@ -227,7 +227,7 @@
             // LABEL_ADDRESS_CONTACT
             // 
             this.LABEL_ADDRESS_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_ADDRESS_CONTACT.Location = new System.Drawing.Point(30, 344);
+            this.LABEL_ADDRESS_CONTACT.Location = new System.Drawing.Point(30, 390);
             this.LABEL_ADDRESS_CONTACT.Name = "LABEL_ADDRESS_CONTACT";
             this.LABEL_ADDRESS_CONTACT.Size = new System.Drawing.Size(197, 38);
             this.LABEL_ADDRESS_CONTACT.TabIndex = 5;
@@ -239,7 +239,7 @@
             // LABEL_EMAIL_CONTACT
             // 
             this.LABEL_EMAIL_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_EMAIL_CONTACT.Location = new System.Drawing.Point(30, 306);
+            this.LABEL_EMAIL_CONTACT.Location = new System.Drawing.Point(30, 352);
             this.LABEL_EMAIL_CONTACT.Name = "LABEL_EMAIL_CONTACT";
             this.LABEL_EMAIL_CONTACT.Size = new System.Drawing.Size(197, 38);
             this.LABEL_EMAIL_CONTACT.TabIndex = 4;
@@ -250,7 +250,7 @@
             // LABEL_FIRST_NAME_CONTACT
             // 
             this.LABEL_FIRST_NAME_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_FIRST_NAME_CONTACT.Location = new System.Drawing.Point(30, 268);
+            this.LABEL_FIRST_NAME_CONTACT.Location = new System.Drawing.Point(30, 314);
             this.LABEL_FIRST_NAME_CONTACT.Name = "LABEL_FIRST_NAME_CONTACT";
             this.LABEL_FIRST_NAME_CONTACT.Size = new System.Drawing.Size(197, 38);
             this.LABEL_FIRST_NAME_CONTACT.TabIndex = 3;
@@ -262,7 +262,7 @@
             // LABEL_NAME_CONTACT
             // 
             this.LABEL_NAME_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_NAME_CONTACT.Location = new System.Drawing.Point(30, 230);
+            this.LABEL_NAME_CONTACT.Location = new System.Drawing.Point(30, 276);
             this.LABEL_NAME_CONTACT.Name = "LABEL_NAME_CONTACT";
             this.LABEL_NAME_CONTACT.Size = new System.Drawing.Size(197, 38);
             this.LABEL_NAME_CONTACT.TabIndex = 2;
@@ -274,7 +274,7 @@
             // LABEL_IMG_GP_CONTACT
             // 
             this.LABEL_IMG_GP_CONTACT.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LABEL_IMG_GP_CONTACT.Location = new System.Drawing.Point(286, 189);
+            this.LABEL_IMG_GP_CONTACT.Location = new System.Drawing.Point(286, 235);
             this.LABEL_IMG_GP_CONTACT.Name = "LABEL_IMG_GP_CONTACT";
             this.LABEL_IMG_GP_CONTACT.Size = new System.Drawing.Size(127, 21);
             this.LABEL_IMG_GP_CONTACT.TabIndex = 1;
@@ -285,14 +285,15 @@
             // PICB_IMG_CONTACT
             // 
             this.PICB_IMG_CONTACT.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PICB_IMG_CONTACT.Image = ((System.Drawing.Image)(resources.GetObject("PICB_IMG_CONTACT.Image")));
-            this.PICB_IMG_CONTACT.InitialImage = ((System.Drawing.Image)(resources.GetObject("PICB_IMG_CONTACT.InitialImage")));
-            this.PICB_IMG_CONTACT.Location = new System.Drawing.Point(33, 13);
+            this.PICB_IMG_CONTACT.Image = global::MyContact.Properties.Resources.ic_profile;
+            this.PICB_IMG_CONTACT.InitialImage = global::MyContact.Properties.Resources.ic_profile;
+            this.PICB_IMG_CONTACT.Location = new System.Drawing.Point(33, 10);
             this.PICB_IMG_CONTACT.Name = "PICB_IMG_CONTACT";
-            this.PICB_IMG_CONTACT.Size = new System.Drawing.Size(383, 200);
+            this.PICB_IMG_CONTACT.Size = new System.Drawing.Size(383, 260);
             this.PICB_IMG_CONTACT.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PICB_IMG_CONTACT.TabIndex = 0;
             this.PICB_IMG_CONTACT.TabStop = false;
+            this.PICB_IMG_CONTACT.Click += new System.EventHandler(this.PICB_IMG_CONTACT_Click);
             // 
             // Form1
             // 
@@ -332,7 +333,6 @@
         //Gestion du panel droit de la MainWindows
         private System.Windows.Forms.Panel RIGHT_PANEL;
         #region labelAndImgPanelRight
-        private System.Windows.Forms.Button DELETE_CONTACT;
         private System.Windows.Forms.PictureBox PICB_IMG_CONTACT;
         private System.Windows.Forms.Label LABEL_IMG_GP_CONTACT;
         private System.Windows.Forms.Label LABEL_NAME_CONTACT;

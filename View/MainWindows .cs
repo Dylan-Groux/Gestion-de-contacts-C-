@@ -100,6 +100,25 @@ namespace MyContact
             }
         }
 
+        private void BT_DELETE_CONTACT_Click(object sender, EventArgs e)
+        {
+            Contacts contact = (Contacts)this.LB_CONTACTS.SelectedItem;
+            Groupes groupes = GetGroupOf(contact);
+
+            if (groupes != null && contact != null)
+            {
+                DialogResult dr = MessageBox.Show("Êtes-vous sûr de vouloir supprimer ce contact ?",
+                                "MyContacts", MessageBoxButtons.YesNo,
+                                MessageBoxIcon.Information);
+                if (dr == DialogResult.Yes)
+                {
+                    groupes.Contacts.Remove(contact);
+                    UpdateContacts();
+                    SaveManager.SaveData(Global.suiviGroupes);
+                }
+            }
+        }
+
         private void BT_ADD_NEW_CONTACT_Click(object sender, EventArgs e)
         {
             AddNewContactForm addNewContactForm = new AddNewContactForm();
@@ -139,13 +158,23 @@ namespace MyContact
         {
             ClearInfos();
 
-            this.LABEL_IMG_GP_CONTACT.Text = this.CB_CONTACTS.SelectedItem.ToString();
+            Image imageToShow;
+            if (contact.Photo != null)
+            {
+                imageToShow = contact.Photo;
+            }
+            else
+            {
+                imageToShow = Properties.Resources.ic_profile;
+            }
+
+            this.LABEL_IMG_GP_CONTACT.Text = GetGroupOf(contact).Name ;
             this.LABEL_REP_NAME_CONTACT.Text = contact.LastName;
             this.LABEL_REP_FIRST_NAME_CONTACT.Text = contact.FirstName;
             this.LABEL_REP_EMAIL_CONTACT.Text = contact.Email;
             this.LABEL_REP_ADDRESS_CONTACT.Text = contact.Address;
             this.LABEL_REP_TEL_CONTACT.Text = contact.Phone;
-            this.PICB_IMG_CONTACT.Image = contact.Photo;
+            this.PICB_IMG_CONTACT.Image = imageToShow;
         }
 
         // ClearInfos() method to clear the contact information labels and image
@@ -157,7 +186,17 @@ namespace MyContact
             this.LABEL_REP_EMAIL_CONTACT.Text = "";
             this.LABEL_REP_TEL_CONTACT.Text = "";
             this.LABEL_REP_ADDRESS_CONTACT.Text = "";
-            this.PICB_IMG_CONTACT.Image = null;
+            this.PICB_IMG_CONTACT.Image = MyContact.Properties.Resources.ic_profile;
+        }
+
+        //Méthode pour récupérer un groupe spécifique
+        private Groupes GetGroupOf(Contacts contact)
+        {
+            return Global.suiviGroupes.Find(groupes => groupes.Contacts.Contains(contact));
+        }
+
+        private void PICB_IMG_CONTACT_Click(object sender, EventArgs e)
+        {
         }
     }
 }

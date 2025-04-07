@@ -14,7 +14,7 @@ namespace MyContact
 
         //Properties
         public string Name { get => name; set => name = value; }
-        public string Description { get => name; set => name = value; }
+        public string Description { get => description; set => description = value; }
         public List<Contacts> Contacts { get => contactsList; set => contactsList = value; }
 
         //Constructor
