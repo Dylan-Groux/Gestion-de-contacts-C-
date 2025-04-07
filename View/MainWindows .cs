@@ -15,6 +15,8 @@ namespace MyContact
         public Form1()
         {
             InitializeComponent();
+
+            Global.suiviGroupes = SaveManager.Open();
             LoadGroups();
         }
 
@@ -107,6 +109,9 @@ namespace MyContact
             {
                 //Mise à jour de la liste des contacts
                 UpdateContacts();
+
+                //Sauvegarde des données
+                SaveManager.SaveData(Global.suiviGroupes);
             }
             else
             {
