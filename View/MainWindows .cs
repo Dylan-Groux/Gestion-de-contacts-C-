@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyContact
 {
-    public partial class Form1 : Form
+    public partial class MainWindows : Form
     {
-        public Form1()
+        public MainWindows()
         {
             InitializeComponent();
 
@@ -21,7 +21,7 @@ namespace MyContact
         }
 
 
-        private void LoadGroups()
+        public void LoadGroups()
         {
             this.CB_CONTACTS.Items.Clear();
             this.CB_CONTACTS.Items.Add("Tout");
@@ -38,7 +38,7 @@ namespace MyContact
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void MainWindows_Load(object sender, EventArgs e)
         {
 
         }

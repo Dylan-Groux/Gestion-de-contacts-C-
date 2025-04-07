@@ -26,6 +26,20 @@ namespace MyContact
 
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is Groupes other)
+            {
+                return this.name == other.name;
+            }
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
+        }
+
         public Groupes(string groupName, string groupDescription)
         {
             this.Name = groupName;

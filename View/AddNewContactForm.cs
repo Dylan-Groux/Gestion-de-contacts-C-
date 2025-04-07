@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyContact.View;
 
 namespace MyContact
 {
@@ -94,6 +95,44 @@ namespace MyContact
             }
 
                 MessageBox.Show(dr.ToString());
+
+        }
+
+        private void BT_ADD_GROUPES_NEW_CONTACT_Click(object sender, EventArgs e)
+        {
+            AddGroupesWindows agw = new AddGroupesWindows();
+            if(agw.ShowDialog() == DialogResult.OK)
+            {
+                if (agw.GroupesToAdd != null)
+                {
+                    Global.AddGroupes(agw.GroupesToAdd);
+
+                    this.CB_GROUPES_ADD_NEWCONTACT.Items.Add(agw.GroupesToAdd);
+                    this.CB_GROUPES_ADD_NEWCONTACT.SelectedItem = agw.GroupesToAdd;
+                }
+            }
+        }
+
+        private void BT_REMOVE_GROUPES_NEW_CONTACT_Click(object sender, EventArgs e)
+        {
+            RemoveGroupesWindows rgw = new RemoveGroupesWindows();
+            if(rgw.ShowDialog() == DialogResult.OK)
+            {
+                Global.RemoveGroupes(rgw.GroupesToRemove);
+
+                this.CB_GROUPES_ADD_NEWCONTACT.Items.Remove(rgw.GroupesToRemove);
+                this.CB_GROUPES_ADD_NEWCONTACT.SelectedIndex = 0;
+            }
+            
+        }
+
+        private void CB_GROUPES_ADD_NEWCONTACT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewContactForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

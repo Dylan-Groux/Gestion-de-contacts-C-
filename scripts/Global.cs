@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MyContact
 {
@@ -10,6 +11,9 @@ namespace MyContact
     {
 
         //Variables
+        public static MainWindows mainWindows;
+
+        //Liste des groupes de contacts de l'utilisateur
         public static List<Groupes> suiviGroupes = new List<Groupes>()
         {
             new Groupes("Famille", "Famille"),
@@ -19,5 +23,20 @@ namespace MyContact
 
         };
 
+        public static void AddGroupes(Groupes groupesToAdd)
+        {
+            suiviGroupes.Add(groupesToAdd);
+            SaveManager.SaveData(suiviGroupes);
+
+            mainWindows.LoadGroups();
+        }
+
+        public static void RemoveGroupes(Groupes groupesToRemove)
+        {
+            suiviGroupes.Remove(groupesToRemove);
+            SaveManager.SaveData(suiviGroupes);
+
+            mainWindows.LoadGroups();
+        }
     }
 }

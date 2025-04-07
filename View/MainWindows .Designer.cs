@@ -1,6 +1,6 @@
 ﻿namespace MyContact
 {
-    partial class Form1
+    partial class MainWindows
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -295,16 +295,16 @@
             this.PICB_IMG_CONTACT.TabStop = false;
             this.PICB_IMG_CONTACT.Click += new System.EventHandler(this.PICB_IMG_CONTACT_Click);
             // 
-            // Form1
+            // MainWindows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 503);
             this.Controls.Add(this.RIGHT_PANEL);
             this.Controls.Add(this.LEFT_PANEL);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "MainWindows";
+            this.Text = "Mes contacts";
+            this.Load += new System.EventHandler(this.MainWindows_Load);
             this.LEFT_PANEL.ResumeLayout(false);
             this.GB_SEARCH_CONTACT.ResumeLayout(false);
             this.GB_SEARCH_CONTACT.PerformLayout();
