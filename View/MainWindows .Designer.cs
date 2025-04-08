@@ -83,6 +83,7 @@
             this.TB_SEARCH_CONTACT.Name = "TB_SEARCH_CONTACT";
             this.TB_SEARCH_CONTACT.Size = new System.Drawing.Size(252, 20);
             this.TB_SEARCH_CONTACT.TabIndex = 0;
+            this.TB_SEARCH_CONTACT.TextChanged += new System.EventHandler(this.TB_SEARCH_CONTACT_TextChanged);
             // 
             // BT_ADD_NEW_CONTACT
             // 

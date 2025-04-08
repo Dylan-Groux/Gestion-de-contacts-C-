@@ -198,5 +198,27 @@ namespace MyContact
         private void PICB_IMG_CONTACT_Click(object sender, EventArgs e)
         {
         }
+
+        //Methode qui permet de rechercher un contact en particulier
+        private void TB_SEARCH_CONTACT_TextChanged(object sender, EventArgs e)
+        {
+            string search = TB_SEARCH_CONTACT.Text.ToLower();
+
+            this.LB_CONTACTS.Items.Clear();
+            this.CB_CONTACTS.SelectedIndex = 0;
+
+            foreach (Groupes g in Global.suiviGroupes)
+            {
+                foreach (Contacts c in g.Contacts)
+                {
+                    string cName = c.ToString().ToLower();
+
+                    if (cName.Contains(search))
+                    {
+                        this.LB_CONTACTS.Items.Add(c);
+                    }
+                }
+            }
+        }
     }
 }
