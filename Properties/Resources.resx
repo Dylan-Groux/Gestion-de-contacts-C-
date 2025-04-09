@@ -121,7 +121,13 @@
   <data name="delete_156119_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete-156119_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="full_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\full_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="ic_profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ic_profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wide_star" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wide_star.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -117,5 +117,11 @@
   <ItemGroup>
     <None Include="Resources\delete-156119_1280.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full_star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wide_star.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

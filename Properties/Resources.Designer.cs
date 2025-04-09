@@ -73,9 +73,29 @@ namespace MyContact.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap full_star {
+            get {
+                object obj = ResourceManager.GetObject("full_star", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ic_profile {
             get {
                 object obj = ResourceManager.GetObject("ic_profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wide_star {
+            get {
+                object obj = ResourceManager.GetObject("wide_star", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

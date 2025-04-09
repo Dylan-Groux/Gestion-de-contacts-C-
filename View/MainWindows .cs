@@ -73,6 +73,8 @@ namespace MyContact
                 Groupes groupes = (Groupes)this.CB_CONTACTS.SelectedItem;
                 ShowContactsOf(groupes);
             }
+
+
             if (this.LB_CONTACTS.Items.Count > 0)
             {
                 this.LB_CONTACTS.SelectedIndex = 0;
@@ -85,6 +87,9 @@ namespace MyContact
 
         private void ShowContactsOf(Groupes groupes)
         {
+
+            this.CHECKB_SHOW_FAVORIS.Checked = false;
+
             this.LB_CONTACTS.Items.Clear();
 
             this.LB_CONTACTS.Items.AddRange(groupes.Contacts.ToArray());
@@ -94,9 +99,22 @@ namespace MyContact
         {
             LB_CONTACTS.Items.Clear();
 
-            foreach (Groupes groupes in Global.suiviGroupes)
+            if (!this.CHECKB_SHOW_FAVORIS.Checked)
             {
-                LB_CONTACTS.Items.AddRange(groupes.Contacts.ToArray());
+                foreach (Groupes groupes in Global.suiviGroupes)
+                {
+                    LB_CONTACTS.Items.AddRange(groupes.Contacts.ToArray());
+                }
+            }
+            else
+            {
+                List<Contacts> favoritesContacts = new List<Contacts>();
+                foreach (Groupes groupes in Global.suiviGroupes)
+                {
+                    List<Contacts> favoritesOfGroup = groupes.Contacts.FindAll(c => c.Favorite.Equals(true));
+                    favoritesContacts.AddRange(favoritesOfGroup);
+                }
+                this.LB_CONTACTS.Items.AddRange(favoritesContacts.ToArray());
             }
         }
 
@@ -175,6 +193,7 @@ namespace MyContact
             this.LABEL_REP_ADDRESS_CONTACT.Text = contact.Address;
             this.LABEL_REP_TEL_CONTACT.Text = contact.Phone;
             this.PICB_IMG_CONTACT.Image = imageToShow;
+            UpdateFavorite(contact.Favorite);
         }
 
         // ClearInfos() method to clear the contact information labels and image
@@ -187,6 +206,7 @@ namespace MyContact
             this.LABEL_REP_TEL_CONTACT.Text = "";
             this.LABEL_REP_ADDRESS_CONTACT.Text = "";
             this.PICB_IMG_CONTACT.Image = MyContact.Properties.Resources.ic_profile;
+            UpdateFavorite(false);
         }
 
         //Méthode pour récupérer un groupe spécifique
@@ -219,6 +239,35 @@ namespace MyContact
                     }
                 }
             }
+        }
+
+        private void PICB_FAVORITE_Click(object sender, EventArgs e)
+        {
+            Contacts contacts = (Contacts)this.LB_CONTACTS.SelectedItem;
+            contacts.Favorite = !contacts.Favorite;
+
+            UpdateFavorite(contacts.Favorite);
+
+            SaveManager.SaveData(Global.suiviGroupes);
+        }
+
+        private object UpdateFavorite(bool favorite)
+        {
+            if (favorite)
+            {
+                this.PICB_FAVORITE.Image = Properties.Resources.full_star;
+            }
+            else
+            {
+                this.PICB_FAVORITE.Image = Properties.Resources.wide_star;
+            }
+
+            return null;
+        }
+
+        private void CHECKB_SHOW_FAVORIS_CheckedChanged(object sender, EventArgs e)
+        {
+            ShowAllContacts();
         }
     }
 }

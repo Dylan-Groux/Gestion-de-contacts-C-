@@ -30,6 +30,7 @@
         private void InitializeComponent()
         {
             this.LEFT_PANEL = new System.Windows.Forms.Panel();
+            this.CHECKB_SHOW_FAVORIS = new System.Windows.Forms.CheckBox();
             this.GB_SEARCH_CONTACT = new System.Windows.Forms.GroupBox();
             this.TB_SEARCH_CONTACT = new System.Windows.Forms.TextBox();
             this.BT_ADD_NEW_CONTACT = new System.Windows.Forms.Button();
@@ -37,6 +38,7 @@
             this.LB_CONTACTS = new System.Windows.Forms.ListBox();
             this.CB_CONTACTS = new System.Windows.Forms.ComboBox();
             this.RIGHT_PANEL = new System.Windows.Forms.Panel();
+            this.PICB_FAVORITE = new System.Windows.Forms.PictureBox();
             this.BT_DELETE_CONTACT = new System.Windows.Forms.Button();
             this.LABEL_REP_TEL_CONTACT = new System.Windows.Forms.Label();
             this.LABEL_REP_ADDRESS_CONTACT = new System.Windows.Forms.Label();
@@ -54,18 +56,32 @@
             this.GB_SEARCH_CONTACT.SuspendLayout();
             this.GB_CONTACT.SuspendLayout();
             this.RIGHT_PANEL.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PICB_FAVORITE)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PICB_IMG_CONTACT)).BeginInit();
             this.SuspendLayout();
             // 
             // LEFT_PANEL
             // 
+            this.LEFT_PANEL.Controls.Add(this.CHECKB_SHOW_FAVORIS);
             this.LEFT_PANEL.Controls.Add(this.GB_SEARCH_CONTACT);
             this.LEFT_PANEL.Controls.Add(this.BT_ADD_NEW_CONTACT);
             this.LEFT_PANEL.Controls.Add(this.GB_CONTACT);
             this.LEFT_PANEL.Location = new System.Drawing.Point(8, 6);
             this.LEFT_PANEL.Name = "LEFT_PANEL";
-            this.LEFT_PANEL.Size = new System.Drawing.Size(315, 485);
+            this.LEFT_PANEL.Size = new System.Drawing.Size(315, 499);
             this.LEFT_PANEL.TabIndex = 1;
+            // 
+            // CHECKB_SHOW_FAVORIS
+            // 
+            this.CHECKB_SHOW_FAVORIS.AutoSize = true;
+            this.CHECKB_SHOW_FAVORIS.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.CHECKB_SHOW_FAVORIS.Location = new System.Drawing.Point(30, 477);
+            this.CHECKB_SHOW_FAVORIS.Name = "CHECKB_SHOW_FAVORIS";
+            this.CHECKB_SHOW_FAVORIS.Size = new System.Drawing.Size(112, 17);
+            this.CHECKB_SHOW_FAVORIS.TabIndex = 4;
+            this.CHECKB_SHOW_FAVORIS.Text = "Afficher les favoris";
+            this.CHECKB_SHOW_FAVORIS.UseVisualStyleBackColor = true;
+            this.CHECKB_SHOW_FAVORIS.CheckedChanged += new System.EventHandler(this.CHECKB_SHOW_FAVORIS_CheckedChanged);
             // 
             // GB_SEARCH_CONTACT
             // 
@@ -127,6 +143,7 @@
             // 
             // RIGHT_PANEL
             // 
+            this.RIGHT_PANEL.Controls.Add(this.PICB_FAVORITE);
             this.RIGHT_PANEL.Controls.Add(this.BT_DELETE_CONTACT);
             this.RIGHT_PANEL.Controls.Add(this.LABEL_REP_TEL_CONTACT);
             this.RIGHT_PANEL.Controls.Add(this.LABEL_REP_ADDRESS_CONTACT);
@@ -142,8 +159,21 @@
             this.RIGHT_PANEL.Controls.Add(this.PICB_IMG_CONTACT);
             this.RIGHT_PANEL.Location = new System.Drawing.Point(337, 6);
             this.RIGHT_PANEL.Name = "RIGHT_PANEL";
-            this.RIGHT_PANEL.Size = new System.Drawing.Size(453, 485);
+            this.RIGHT_PANEL.Size = new System.Drawing.Size(453, 499);
             this.RIGHT_PANEL.TabIndex = 2;
+            // 
+            // PICB_FAVORITE
+            // 
+            this.PICB_FAVORITE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PICB_FAVORITE.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PICB_FAVORITE.Image = global::MyContact.Properties.Resources.wide_star;
+            this.PICB_FAVORITE.Location = new System.Drawing.Point(39, 15);
+            this.PICB_FAVORITE.Name = "PICB_FAVORITE";
+            this.PICB_FAVORITE.Size = new System.Drawing.Size(53, 46);
+            this.PICB_FAVORITE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PICB_FAVORITE.TabIndex = 13;
+            this.PICB_FAVORITE.TabStop = false;
+            this.PICB_FAVORITE.Click += new System.EventHandler(this.PICB_FAVORITE_Click);
             // 
             // BT_DELETE_CONTACT
             // 
@@ -300,17 +330,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 503);
+            this.ClientSize = new System.Drawing.Size(800, 505);
             this.Controls.Add(this.RIGHT_PANEL);
             this.Controls.Add(this.LEFT_PANEL);
             this.Name = "MainWindows";
             this.Text = "Mes contacts";
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.LEFT_PANEL.ResumeLayout(false);
+            this.LEFT_PANEL.PerformLayout();
             this.GB_SEARCH_CONTACT.ResumeLayout(false);
             this.GB_SEARCH_CONTACT.PerformLayout();
             this.GB_CONTACT.ResumeLayout(false);
             this.RIGHT_PANEL.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PICB_FAVORITE)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PICB_IMG_CONTACT)).EndInit();
             this.ResumeLayout(false);
 
@@ -350,6 +382,8 @@
         private System.Windows.Forms.Label LABEL_REP_NAME_CONTACT;
         #endregion
 
+        private System.Windows.Forms.PictureBox PICB_FAVORITE;
+        private System.Windows.Forms.CheckBox CHECKB_SHOW_FAVORIS;
     }
 }
 

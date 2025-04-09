@@ -15,6 +15,7 @@ namespace MyContact
         private string phone;
         private string address;
         private Image photo;
+        private bool favorite;
 
         //Properties
         public string FirstName { get => firstname; set => firstname = value; }
@@ -23,6 +24,8 @@ namespace MyContact
         public string Phone { get => phone; set => phone = value; }
         public string Address { get => address; set => address = value; }
         public Image Photo { get => photo; set => photo = value; }
+        public bool Favorite { get => favorite; set => favorite = value; }
+
 
         //Constructors
         public Contacts()
@@ -30,7 +33,7 @@ namespace MyContact
 
         }
 
-        public Contacts(string firstname, string lastname, string email, string phone, string address, Image photo)
+        public Contacts(string firstname, string lastname, string email, string phone, string address, Image photo, bool favorite = false)
         {
             this.FirstName = firstname;
             this.LastName = lastname;
@@ -38,7 +41,7 @@ namespace MyContact
             this.Phone = phone;
             this.Address = address;
             this.Photo = photo;
-
+            this.Favorite = favorite;
         }
 
 
